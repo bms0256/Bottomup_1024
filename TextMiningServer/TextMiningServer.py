@@ -46,15 +46,11 @@ def frequency(): # 내부 IP 또는 도메인(DDNS):내부 포트 또는 외부 
 def get_tags(text, ntags, word): # 추출한 텍스트에서 명사를 분리&추출한 후 빈도를
                                 # 계산하는 함수, 첫 번째 인자 text는 분석에 사용
                                 # 할 텍스트이고, ntags는 분리한 명사들 중 결과
-                                # 를 출력할 명사의 개수이다. 50은 디폴트값(기본
-                                # 값)으로, 사용자로부터 아무 입력이 없으면 빈도
-                                # 수 기준으로 상위 50개의 명사만 출력한다.
+                                # 를 출력할 명사의 개수이다.
 
     spliter = Okt() # Okt 기능을 하는 객체 생성
     nouns = spliter.nouns(text) # noun 메소드(기능)로 text에서 명사만 분리&추출
-                                # 그리고 그걸 순환가능한 객체로 저장(순환가능하
-                                # 다는건 리스트처럼 요소 정보를 언제 어디서든 뽑
-                                # 아내 쓸 수 있다는 것
+                                # 그리고 그걸 순환가능한 객체로 저장
                                 
     count = Counter(nouns) #분리 및 추출한 명사 빈도 계산
     
@@ -64,8 +60,7 @@ def get_tags(text, ntags, word): # 추출한 텍스트에서 명사를 분리&�
     
     for n, c in count.most_common(ntags): #입력받은 인자 ntags(정수)만큼 count
                                           #에 저장되어 있는 명사를 빈도수 큰거
-                                          #부터 반환함. n에는 명사, c에는 빈도수
-                                          #딕셔너리가 저장됨
+                                          #부터 반환함. n에는 명사, c에는 빈도수가 저장됨.
         
         if len(n)!=1 and len(n)!=0:
             if word in n:
