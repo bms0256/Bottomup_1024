@@ -64,8 +64,8 @@ def get_tags(text, ntags, word): # 추출한 텍스트에서 명사를 분리&�
     
     for n, c in count.most_common(ntags): #입력받은 인자 ntags(정수)만큼 count
                                           #에 저장되어 있는 명사를 빈도수 큰거
-                                          #부터 반환함. n에는 명사, c에는 빈도수
-                                          #딕셔너리가 저장됨
+                                          #부터 반환 함. n에는 명사, c에는 빈도수가 저장됨.
+                                        
         
         if len(n)!=1 and len(n)!=0:
             if word in n:
